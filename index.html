@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red-Black Tree Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Using Inter font for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- D3.js library for visualization -->
+    <script src="https://d3js.org/d3.v7.min.js"></script> 
+</head>
+<body>
+    <div id="app-container">
+        <!-- Header Section -->
+        <header id="header-container">
+            <span class="rbt-logo">
+                <span class="dot red-dot"></span>
+                <span class="dot black-dot"></span>
+            </span>
+            <h1>Red-Black Tree Visualizer</h1>
+        </header>
+
+        <!-- Controls Section -->
+        <div id="controls-container">
+            <div class="input-group">
+                <input type="number" id="insertValue" placeholder="Enter integer">
+                <button onclick="send_command('insert')" class="btn btn-primary">Insert</button>
+            </div>
+
+            <div class="input-group">
+                <input type="number" id="deleteValue" placeholder="Value to delete">
+                <button onclick="send_command('delete')" class="btn btn-secondary">Delete (by value)</button>
+            </div>
+            
+            <button onclick="send_command('reset')" class="btn btn-tertiary">Reset</button>
+            <button onclick="send_command('random')" class="btn btn-primary">Insert Random</button>
+        </div>
+
+        <!-- Statistics Section -->
+        <div id="stats-container">
+            <span>Nodes: <span id="stat_nodes">0</span></span>
+            <span>Height: <span id="stat_height">0</span></span>
+            <span>Rotations: <span id="stat_rotations">0</span></span>
+        </div>
+
+        <!-- Visualization Area -->
+        <div id="tree-container">
+            <!-- SVG visualization will be drawn here -->
+        </div>
+    </div>
+
+    <script src="rbt_visualizer.js"></script>
+</body>
+</html>

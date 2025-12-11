@@ -1,0 +1,174 @@
+/* --- Global Styles and Typography --- */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fa; /* Soft light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+#app-container {
+    width: 95%;
+    max-width: 1200px;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+/* --- Header and Logo --- */
+#header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    gap: 15px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+}
+
+.rbt-logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+.red-dot { background-color: #e53e3e; } /* Bright Red */
+.black-dot { background-color: #2d3748; } /* Dark Blue/Black */
+
+
+/* --- Controls Section --- */
+#controls-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0 25px 0;
+    flex-wrap: wrap; /* Responsive wrapping */
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="number"] {
+    padding: 10px 15px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    width: 180px; /* Fixed width for better alignment */
+    text-align: center;
+}
+
+input[type="number"]:focus {
+    border-color: #4299e1;
+    outline: none;
+}
+
+/* --- Buttons --- */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #4299e1; /* Blue */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3182ce;
+}
+
+.btn-secondary {
+    background-color: #a0aec0; /* Grey/Blue for Delete */
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #718096;
+}
+
+.btn-tertiary {
+    background-color: #e2e8f0; /* Light Grey for Reset */
+    color: #2d3748;
+}
+
+.btn-tertiary:hover {
+    background-color: #cbd5e0;
+}
+
+/* --- Statistics Display --- */
+#stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4a5568;
+    padding-bottom: 20px;
+}
+
+#stats-container span {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #edf2f7;
+}
+
+/* --- Visualization Area --- */
+#tree-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05); /* Soft shadow for "floating" effect */
+    padding: 20px;
+    min-height: 65vh; /* Ensure it takes up most of the screen */
+    overflow: auto;
+}
+
+/* D3 Node Styling */
+.node circle {
+    stroke: #2d3748;
+    stroke-width: 2px;
+    transition: fill 0.5s; /* Smooth color transitions */
+}
+.node text {
+    font-size: 12px;
+    font-weight: 600;
+}
+.link {
+    fill: none;
+    stroke: #9ae6b4; /* Light Green for connections */
+    stroke-opacity: 0.8;
+    stroke-width: 2px;
+}
+
+/* Specific Node Colors (Critical for RBT) */
+.red-node circle { fill: #f56565; } /* Brighter Red */
+.black-node circle { fill: #2d3748; } /* Dark Black/Blue */
+.black-node text { fill: white; } /* White text for contrast on black nodes */
+.red-node text { fill: #2d3748; } /* Dark text for contrast on red nodes */
